@@ -1,3 +1,6 @@
+Tempo vídeo 1:12:39
+https://youtu.be/BkX4niTo9Ow?t=4359
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
