@@ -72,6 +72,7 @@ header {
     outline: 0;
     background-color: transparent;
     margin-left: 10px;
+    min-width: 0;
 }
 
 .chatlist {
@@ -80,27 +81,15 @@ header {
     overflow-y: auto;
 }
 
+.chatlist::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.chatlist::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,0.2);
+}
 
 .contentarea {
-
+    flex: 1;
 }

@@ -7,10 +7,17 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 
 import ChatListItem from './components/ChatListItem';
+import ChatIntro from './components/ChatIntro';
+import ChatWindow from './components/ChatWindow';
 
 export default () => {
 
-    const[chatlist, setChatList] = useState([{},{},{},{}]);
+    const[chatlist, setChatList] = useState([
+        {chatId: 1, title: 'fulano de tal', image: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg'},
+        {chatId: 2, title: 'fulano de tal', image: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg'},
+        {chatId: 3, title: 'fulano de tal', image: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg'},
+        {chatId: 4, title: 'fulano de tal', image: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg'},]);
+    const[activeChat, setActiveChat] = useState({});
 
     return (
         <div className="app-window">
@@ -37,11 +44,22 @@ export default () => {
                 </div>
                 <div className="chatlist">
                     {chatlist.map((item, key) => (
-                        <ChatListItem key={key}></ChatListItem>
+                        <ChatListItem 
+                            key={key}
+                            data={item}
+                            active={item.chatId == activeChat.chatId}
+                            onClick={() => setActiveChat(item)}></ChatListItem>
                     ))}
                 </div>
             </div>
-            <div className="contentarea">...</div>
+            <div className="contentarea">
+                {activeChat.chatId !== undefined &&                     
+                    <ChatWindow/>
+                }
+                {activeChat.chatId === undefined &&                     
+                    <ChatIntro/>
+                }
+            </div>
         </div>
     );
 }
