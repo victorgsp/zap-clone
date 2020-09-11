@@ -1,5 +1,4 @@
-Tempo vídeo 1:12:39
-https://youtu.be/BkX4niTo9Ow?t=4359
+https://youtu.be/BkX4niTo9Ow?list=WL&t=5967
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
